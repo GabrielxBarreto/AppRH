@@ -14,8 +14,8 @@ import jakarta.persistence.OneToMany;// relacionamento de cardinalidade
 public class Vaga implements Serializable {
     private static final long serialVersionUID = 1L;// verifica se a versão do obj é compativel com a versao da class
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long codigo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
     //@NotEmpty
     private String nome;
     //@NotEmpty

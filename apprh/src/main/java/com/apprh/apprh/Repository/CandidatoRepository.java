@@ -6,7 +6,7 @@ import com.apprh.apprh.Models.Candidato;
 import com.apprh.apprh.Models.Vaga;
 
 // a estrutura findBy é padrão
-public interface CandidatoRepository extends CrudRepository<Candidato,String> {
+public interface CandidatoRepository extends CrudRepository<Candidato,Long> {
     // o generic: <Candidato, String> indica a classe que será manipulada e o tipo da chave primaria a entidade
     Iterable<Candidato>findByVaga(Vaga vaga);
     Candidato findByRG(String rg);

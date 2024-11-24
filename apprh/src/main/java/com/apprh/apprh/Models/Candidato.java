@@ -3,14 +3,17 @@ package com.apprh.apprh.Models;
 import jakarta.persistence.Column;// deleta a tabela e suas informações 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue; // id automatico 
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;// identifica o id
 import jakarta.persistence.ManyToOne;// relacionamento de cardinalidade
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Candidato") 
 public class Candidato{
     @Id
-    @GeneratedValue
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(unique = true) // valores unicos na coluna
     private String rg;
