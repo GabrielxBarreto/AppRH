@@ -1,7 +1,6 @@
 package com.apprh.apprh.Controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +16,7 @@ import com.apprh.apprh.Repository.VagaRepository;
 
 @RestController
 public class VagaController {
+    
     private VagaRepository vr;
     private CandidatoRepository cr;
 
@@ -30,7 +30,7 @@ public class VagaController {
     //@GetMApping indica que o método é get
     @RequestMapping(value = "/cadastrarVaga", method=RequestMethod.GET)
     public String form(){
-        return "vaga/formVaga";
+        return "formVaga";
     }
     @RequestMapping(value = "/cadastrarVaga", method=RequestMethod.POST)
     public String form(@Validated Vaga vaga, BindingResult result,  RedirectAttributes attributes){
@@ -45,7 +45,7 @@ public class VagaController {
     //Listar Vagas
     @RequestMapping("/vagas")
     public ModelAndView ListaVagas(){
-        ModelAndView mv = new ModelAndView("vaga/listaVaga");
+        ModelAndView mv = new ModelAndView("  listaVaga");
         Iterable<Vaga>vagas = vr.findAll();
         mv.addObject("vagas", vagas);
         return mv;
@@ -73,7 +73,7 @@ public class VagaController {
             return "redirect:/{codigo}cadastrarVaga";
         }
        //teste de consistencia rg duplicado
-       if(cr.findByRG(candidato.getRg())!=null){
+       if(cr.findByRg(candidato.getRg())!=null){
         attributes.addFlashAttribute("mensagem erro", "Rg duplicado");
        }
        Vaga vaga = vr.findByCodigo(codigo);

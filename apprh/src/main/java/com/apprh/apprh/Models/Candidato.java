@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Candidato") 
 public class Candidato{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +24,9 @@ public class Candidato{
 
     @ManyToOne  
     private Vaga vaga;
-    
+    public Candidato(){
+        
+    }
     public String getEmail() {
         return email;
     }public long getId() {

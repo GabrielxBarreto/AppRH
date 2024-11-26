@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Vaga</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Vaga</h1>
+        <h2 th:text="${vaga.titulo}"></h2>
+        <p th:text="${vaga.descricao}"></p>
+        <p>Salário: <span th:text="${vaga.salario}"></span></p>
+
+        <h3>Candidatos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>RG</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="candidato : ${candidato}">
+                    <td th:text="${candidato.nomeCandidato}"></td>
+                    <td th:text="${candidato.rg}"></td>
+                    <td>
+                        <a th:href="@{'/deletarCandidato?rg=' + ${candidato.rg}}">Deletar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Adicionar Candidato</h3>
+        <form action="/{codigo}" method="POST" id="formCandidato">
+            <div class="form-group">
+                <label for="nomeCandidato">Nome</label>
+                <input type="text" id="nomeCandidato" name="nomeCandidato" required />
+            </div>
+            <div class="form-group">
+                <label for="rg">RG</label>
+                <input type="text" id="rg" name="rg" required />
+            </div>
+            <button type="submit">Adicionar Candidato</button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

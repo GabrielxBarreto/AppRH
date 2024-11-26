@@ -1,6 +1,5 @@
 package com.apprh.apprh.Models;
 
-
 import java.io.Serializable;// transforma os obj em binario para manipular e vice versa
 import java.util.List;
 import jakarta.persistence.CascadeType;// deleta a tabela e suas informações 
@@ -69,3 +68,4 @@ public class Vaga implements Serializable {
     }
 
 }
+
