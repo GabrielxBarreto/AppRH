@@ -24,7 +24,7 @@ O método run será chamado automaticamente após a aplicação ser iniciada, o 
         Candidato c = new Candidato();
         c.setEmail("teste@gmail.com");
         c.setNomeCandidato("Kiuru");
-        c.setRg("25-326439978");
+        c.setRg("25-3268839978");
 
         // Agora o serviço é chamado corretamente pelo Spring
         cs.salvarCandidato(c);
