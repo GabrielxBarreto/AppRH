@@ -8,11 +8,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 @Entity
-public class Gestor {
+public class Gestor extends Colaborador{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGestao;
 @OneToMany
+private Tarefas tarefas;
+@OneToMany
+private RelatoriodePerformace relatoriodePerformace;
+@OneToMany
+private FolgaseTurnos folgaseTurnos;
 private List<Colaborador>equipe;
 
 public List<Colaborador> getEquipe() {

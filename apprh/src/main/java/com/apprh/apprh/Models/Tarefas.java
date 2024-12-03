@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 @Entity
 public class Tarefas {
     @Id
@@ -15,6 +17,10 @@ public class Tarefas {
    private String descricao;
    private Date datainicio;
    private Date dataFim;
+   @ManyToMany
+   private Colaborador colaborador;
+   @ManyToOne
+   private Gestor gestor;
 public int getIdTarefa() {
     return idTarefa;
 }

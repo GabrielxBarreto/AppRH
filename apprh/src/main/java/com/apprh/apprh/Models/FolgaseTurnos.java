@@ -2,26 +2,27 @@ package com.apprh.apprh.Models;
 
 import java.sql.Time;
 import java.util.Date;
-
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class FolgaseTurnos {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int idEscala;
+private Long idEscala;
 private String turno;
 private Time inicioDoTurno;
 private  Time fimTurno;
 private Date dataFolha;
-public int getIdEscala() {
+@ManyToOne
+private Gestor gestor;
+public Long getIdEscala() {
     return idEscala;
 }
-public void setIdEscala(int idEscala) {
+public void setIdEscala(Long idEscala) {
     this.idEscala = idEscala;
 }
 public String getTurno() {

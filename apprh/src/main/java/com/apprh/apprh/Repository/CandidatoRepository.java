@@ -3,6 +3,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.apprh.apprh.Models.Candidato;
+import com.apprh.apprh.Models.FolgaseTurnos;
 import com.apprh.apprh.Models.Vaga;
 
 // a estrutura findBy é padrão
@@ -13,5 +14,6 @@ public interface CandidatoRepository extends JpaRepository<Candidato, Long>{
     Candidato findByRg(String rg);
     Candidato findById(long id);
     Candidato findByNomeCandidato(String nome);
+    void save(FolgaseTurnos ft);
 
 }

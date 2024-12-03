@@ -1,6 +1,8 @@
 package com.apprh.apprh.Service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,9 @@ public class CandidatoService {
     @Transactional(readOnly = true)
     public Candidato buscarPorId(Long id){
         return cr.findById(id).get();
+    }
+    @Transactional(readOnly = true)
+    public List<Candidato> buscarTodas(){
+        return cr.findAll();
     }
 }

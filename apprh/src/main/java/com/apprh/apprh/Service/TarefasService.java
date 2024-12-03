@@ -1,31 +1,28 @@
+package com.apprh.apprh.Service;
 
-    package com.apprh.apprh.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import com.apprh.apprh.Models.Tarefas;
 
-
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.stereotype.Service;
-    
-    import org.springframework.transaction.annotation.Transactional;
-    
-    import com.apprh.apprh.Models.Candidato;
-    import com.apprh.apprh.Repository.CandidatoRepository;
+import com.apprh.apprh.Repository.TarefasRepository;
     
     @Service
     @Transactional
     public class TarefasService{
         @Autowired
-        CandidatoRepository cr;
+        TarefasRepository cr;
     
-        public void salvarCandidato(Candidato candidato){
-        cr.save(candidato);
+        public void salvarTarefa(Tarefas tarefa){
+        cr.save(tarefa);
         }
-        public void excluirCandidato(Long id){
+        public void excluirTarefa(Long id){
             // verificar se existe algum funcionario vinculado ao cargo 
             cr.deleteById(id);
         }
         @Transactional(readOnly = true)
-        public Candidato buscarPorId(Long id){
-            return cr.findById(id).get();
+        public Tarefas buscarPorId(Long id){
+            return cr.findByIdTarefa(id);
         }
         public void alocarColaborador(){
         //

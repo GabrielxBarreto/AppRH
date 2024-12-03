@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class FolhadePagamento {
@@ -14,7 +15,8 @@ public class FolhadePagamento {
     private float descontos;
     private float beneficios;
     private float valorLiquido;
-    
+    @OneToOne
+    private Colaborador colaborador;
 public int getIdFolha() {
     return idFolha;
 }

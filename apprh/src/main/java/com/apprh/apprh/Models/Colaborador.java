@@ -6,11 +6,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Colaborador {
-    @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int idColaborador;
 private String nome;
 private int cpf;  
@@ -20,6 +22,10 @@ private float salario;
 private Date dataDeContratacao;
 private String[] status = {"ativo","afastado","demitido"};
 private String  departamento;
+@ManyToMany
+private Tarefas tarefa;
+@OneToOne 
+private FolhadePagamento folhaDepagamento;
 public int getIdColaborador() {
     return idColaborador;
 }

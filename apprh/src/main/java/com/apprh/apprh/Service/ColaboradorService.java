@@ -1,5 +1,7 @@
 package com.apprh.apprh.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +25,10 @@ public class ColaboradorService {
     @Transactional(readOnly = true)
     public Colaborador buscarPorId(Long id){
         return cr.findById(id).get();
+    }
+    @Transactional(readOnly = true)
+    public List<Colaborador> buscarTodas(){
+        return cr.findAll();
     }
     public void trocarTurno(){
         //a fazer
