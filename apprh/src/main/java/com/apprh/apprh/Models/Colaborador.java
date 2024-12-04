@@ -1,31 +1,63 @@
 package com.apprh.apprh.Models;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+import jakarta.persistence.Column;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 
+
 @Entity
+
 public class Colaborador {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int idColaborador;
+@Column
 private String nome;
-private int cpf;  
+@Column(unique =true)
+private String cpf;  
+@Column
 private String cargo;
+@Column
 private Date dataNascimento;
+@Column
 private float salario;
+@Column
 private Date dataDeContratacao;
-private String[] status = {"ativo","afastado","demitido"};
+@Column
+private List<String> status = Arrays.asList("ativo", "afastado", "demitido");
+
+@Column
 private String  departamento;
 @ManyToMany
-private Tarefas tarefa;
-@OneToOne 
-private FolhadePagamento folhaDepagamento;
+@JoinTable(
+    name ="colab_Tarefas",
+    joinColumns = @JoinColumn(name="colab_id"),
+    inverseJoinColumns = @JoinColumn(name = "tarefa_id")
+)
+
+@OneToOne
+private FolhadePagamento folhadePagamento;
+
+public FolhadePagamento getFolhadePagamento() {
+    return folhadePagamento;
+}
+public void setFolhadePagamento(FolhadePagamento folhadePagamento) {
+    this.folhadePagamento = folhadePagamento;
+}
+public Colaborador(){
+
+}
 public int getIdColaborador() {
     return idColaborador;
 }
@@ -38,10 +70,10 @@ public String getNome() {
 public void setNome(String nome) {
     this.nome = nome;
 }
-public int getCpf() {
+public String getCpf() {
     return cpf;
 }
-public void setCpf(int cpf) {
+public void setCpf(String cpf) {
     this.cpf = cpf;
 }
 public String getCargo() {
@@ -68,10 +100,10 @@ public Date getDataDeContratacao() {
 public void setDataDeContratacao(Date dataDeContratacao) {
     this.dataDeContratacao = dataDeContratacao;
 }
-public String[] getStatus() {
+public List<String> getStatus() {
     return status;
 }
-public void setStatus(String[] status) {
+public void setStatus(List<String> status) {
     this.status = status;
 }
 public String getDepartamento() {

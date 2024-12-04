@@ -1,22 +1,28 @@
 package com.apprh.apprh.Models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
+
 @Entity
 public class FolhadePagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFolha;
+    @Column
     private String salarioBase;
+    @Column
     private float descontos;
+    @Column
     private float beneficios;
+    @Column
     private float valorLiquido;
-    @OneToOne
-    private Colaborador colaborador;
+@OneToOne
+private Colaborador colaborador;
 public int getIdFolha() {
     return idFolha;
 }

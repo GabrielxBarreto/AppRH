@@ -2,25 +2,31 @@ package com.apprh.apprh.Models;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+
 import jakarta.persistence.ManyToOne;
+
+
 @Entity
 public class Tarefas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
    private int idTarefa;
+   @Column
    private String nomeTarefa;
+   @Column
    private String descricao;
+   @Column
    private Date datainicio;
+   @Column
    private Date dataFim;
-   @ManyToMany
-   private Colaborador colaborador;
-   @ManyToOne
-   private Gestor gestor;
+@ManyToOne
+private Gestor gestor;
 public int getIdTarefa() {
     return idTarefa;
 }

@@ -5,17 +5,22 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.apprh.apprh.Models.FolgaseTurnos;
-import com.apprh.apprh.Repository.FolgaseTurnosRepository;
+
+import com.apprh.apprh.Models.FolhadePagamento;
+
+import com.apprh.apprh.Repository.FolhadePagamentoRepository;
 
 
 @Service
 @Transactional
 public class FolhadePagamentoService {
-FolgaseTurnosRepository cr;
+FolhadePagamentoRepository cr;
 @Transactional(readOnly = true)
-public List<FolgaseTurnos> buscarTodas(){
+public List<FolhadePagamento> buscarTodas(){
     return cr.findAll();
+}
+public void update(FolhadePagamento ft){
+    cr.save(ft);
 }
 public void calcularSalario(){
 
