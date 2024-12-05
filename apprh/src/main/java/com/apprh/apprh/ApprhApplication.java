@@ -1,5 +1,7 @@
 package com.apprh.apprh;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,10 +26,13 @@ O método run será chamado automaticamente após a aplicação ser iniciada, o 
 
 	public void run(String... args) throws Exception {
         Colaborador c = new Colaborador();
-        c.setNome("JJahjgf");
-        c.setCpf("111781918gre983");
-        
-        // Agora o serviço é chamado corretamente pelo Spring
+        c.setNome("Marcos");
+        c.setCpf("12434344565");// o cpf deve ser diferente 
+		c.setCargo("Patrao");   
+		c.setSalario(1);  
+		Date data = new Date();
+		c.setDataDeContratacao(data);
+		 // Agora o serviço é chamado corretamente pelo Spring
         cs.salvarColaborador(c);
     }
 
