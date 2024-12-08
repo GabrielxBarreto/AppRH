@@ -16,7 +16,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 
 
-@Entity
+@Entity // transforma a classe em tabela
 
 public class Colaborador {
 @Id

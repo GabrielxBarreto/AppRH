@@ -16,7 +16,7 @@ public class Tarefas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-   private int idTarefa;
+   private Long idTarefa;
    @Column
    private String nomeTarefa;
    @Column
@@ -27,10 +27,13 @@ public class Tarefas {
    private Date dataFim;
 @ManyToOne
 private Gestor gestor;
-public int getIdTarefa() {
+public Tarefas(){
+    
+}
+public Long getIdTarefa() {
     return idTarefa;
 }
-public void setIdTarefa(int idTarefa) {
+public void setIdTarefa(Long idTarefa) {
     this.idTarefa = idTarefa;
 }
 public String getNomeTarefa() {

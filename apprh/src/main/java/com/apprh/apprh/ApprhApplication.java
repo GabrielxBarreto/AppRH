@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 import com.apprh.apprh.Models.Colaborador;
-
-
+import com.apprh.apprh.Models.Tarefas;
 import com.apprh.apprh.Service.ColaboradorService;
+import com.apprh.apprh.Service.TarefasService;
 
 
 @SpringBootApplication(scanBasePackages = "com.apprh")//desativa configurações padrão do spring
@@ -20,19 +20,28 @@ public class ApprhApplication implements CommandLineRunner {
 O método run será chamado automaticamente após a aplicação ser iniciada, o que permite que você execute a lógica de salvar o candidato. */
 	@Autowired
 	private  ColaboradorService cs;
+	@Autowired
+	private  TarefasService tr;
 	public static void main(String[] args) {
 		SpringApplication.run(ApprhApplication.class, args);
 	}
 
 	public void run(String... args) throws Exception {
+
+		// Testando as 2 classes pedidas
         Colaborador c = new Colaborador();
-        c.setNome("Marcos");
-        c.setCpf("12434344565");// o cpf deve ser diferente 
-		c.setCargo("Patrao");   
-		c.setSalario(1);  
+        c.setNome("Vinicius");
+        c.setCpf("2443565474");// o cpf deve ser diferente comando : @column (unique = true)
+		c.setCargo("gestor de equipe");   
+		c.setSalario(18);  
 		Date data = new Date();
 		c.setDataDeContratacao(data);
 		 // Agora o serviço é chamado corretamente pelo Spring
+		 Tarefas t =  new Tarefas();
+		 t.setNomeTarefa("Fazer o trabalho");
+		 t.setDescricao("os produtos estão alocados");
+		t.setDatainicio(data);
+		 tr.salvarTarefa(t);
         cs.salvarColaborador(c);
     }
 
