@@ -31,7 +31,7 @@ O método run será chamado automaticamente após a aplicação ser iniciada, o 
 		// Testando as 2 classes pedidas
         Colaborador c = new Colaborador();
         c.setNome("Vinicius");
-        c.setCpf("2443565474");// o cpf deve ser diferente comando : @column (unique = true)
+        c.setCpf("244356666");// o cpf deve ser diferente comando : @column (unique = true)
 		c.setCargo("gestor de equipe");   
 		c.setSalario(18);  
 		Date data = new Date();
