@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.apprh.apprh.Service.ColaboradorService;
 
-import jakarta.annotation.ManagedBean;
+import javax.annotation.ManagedBean;
 
 @ManagedBean
 @ViewScoped

@@ -1,6 +1,6 @@
 package com.apprh.apprh;
 
-import java.util.Date;
+//import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -8,8 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-import com.apprh.apprh.Models.Colaborador;
-import com.apprh.apprh.Models.Tarefas;
+//import com.apprh.apprh.Models.Colaborador;
+//import com.apprh.apprh.Models.Tarefas;
 import com.apprh.apprh.Service.ColaboradorService;
 import com.apprh.apprh.Service.TarefasService;
 
@@ -29,9 +29,9 @@ O método run será chamado automaticamente após a aplicação ser iniciada, o 
 	public void run(String... args) throws Exception {
 
 		// Testando as 2 classes pedidas
-        Colaborador c = new Colaborador();
+       /* Colaborador c = new Colaborador();
         c.setNome("Vinicius");
-        c.setCpf("244356666");// o cpf deve ser diferente comando : @column (unique = true)
+        c.setCpf("24444444");//o cpf deve ser diferente comando : @column (unique = true)
 		c.setCargo("gestor de equipe");   
 		c.setSalario(18);  
 		Date data = new Date();
@@ -42,7 +42,7 @@ O método run será chamado automaticamente após a aplicação ser iniciada, o 
 		 t.setDescricao("os produtos estão alocados");
 		t.setDatainicio(data);
 		 tr.salvarTarefa(t);
-        cs.salvarColaborador(c);
+        cs.salvarColaborador(c);*/
     }
 
 }

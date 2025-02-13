@@ -3,17 +3,18 @@ package com.apprh.apprh.Models;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import jakarta.persistence.Column;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity // transforma a classe em tabela
@@ -35,7 +36,9 @@ private float salario;
 @Column
 private Date dataDeContratacao;
 @Column
-private List<String> status = Arrays.asList("ativo", "afastado", "demitido");
+
+private String  status;
+
 
 @Column
 private String  departamento;
@@ -100,17 +103,17 @@ public Date getDataDeContratacao() {
 public void setDataDeContratacao(Date dataDeContratacao) {
     this.dataDeContratacao = dataDeContratacao;
 }
-public List<String> getStatus() {
-    return status;
-}
-public void setStatus(List<String> status) {
-    this.status = status;
-}
+
 public String getDepartamento() {
     return departamento;
 }
 public void setDepartamento(String departamento) {
     this.departamento = departamento;
 } 
-
+public String getStatus() {
+    return status;
+}
+public void setStatus(String status) {
+    this.status = status;
+}
 }
