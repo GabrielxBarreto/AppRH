@@ -1,0 +1,93 @@
+<!-- src/main/webapp/views/login.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Login - Sistema de RH</title>
+    <h:outputStylesheet library="css" name="styles.css" />
+    <!--<style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+h:outputLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+h:inputText,
+h:inputSecret {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+h:commandButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h:commandButton:hover {
+    background-color: #45a049;
+}
+
+    </style>-->
+</h:head>
+<h:body>
+    <div class="header">
+        <h1>Cadastrar Colaborador</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h:form>
+                <label>Usuario</label>
+                <h:outputLabel for="username" value="#{colaboradorBean.usuario} "/>
+                <h:inputText id="username" required="true" />
+                <label>Senha</label>
+                <h:outputLabel for="password" value="#{colaboradorBean.senha} "/>
+                <h:inputSecret id="password" required="true" />
+                <label>CPF</label>
+                <h:outputLabel for="username" value="#{colaboradorBean.cpf} "/>
+                <h:inputText id="username" required="true" />
+                <label>Cargo</label>
+                <h:outputLabel for="password" value="#{colaboradorBean.cargo} "/>
+                <h:inputSecret id="password" required="true" />
+                <h:commandButton value="Entrar" action="#{ColaboradorBean.cadastro}" />
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>
