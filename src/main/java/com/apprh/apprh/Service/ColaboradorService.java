@@ -17,7 +17,7 @@ public class ColaboradorService {
     ColaboradorRepository cr;
 
     public void salvarColaborador(Colaborador candidato){
-    cr.save(candidato);
+         cr.save(candidato);
     }
     public void excluirColaborador(Long id){
         // verificar se existe algum funcionario vinculado ao cargo 

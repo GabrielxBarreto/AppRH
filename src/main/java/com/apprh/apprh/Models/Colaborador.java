@@ -2,14 +2,13 @@ package com.apprh.apprh.Models;
 
 
 import java.time.LocalDate;
-import java.util.Collection;
+
 
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
 
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.GrantedAuthority;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +17,7 @@ import lombok.Setter;
 @Entity // transforma a classe em tabela
 @Getter
 @Setter
-public class Colaborador extends AbstractEntity<Long> implements UserDetails{
+public class Colaborador extends AbstractEntity<Long>{
 @Column
 private String usuario;
 @Column
@@ -41,44 +40,7 @@ private String  status;
 
 @Column
 private String  departamento;
-@Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAuthorities'");
-    }
-
-    @Override
-    public String getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
-    }
-
-    @Override
-    public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
-    }
-
-    @Override
-    public boolean isEnabled() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isEnabled'");
-    }
 /*@ManyToMany
 @JoinTable(
     name ="colab_Tarefas",
